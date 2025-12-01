@@ -3,29 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Web Project</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 40px;
-      text-align: center;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-  </style>
+  <title>Apple Music Style Search + Popmotion</title>
+
+  <!-- Bootstrap for layout / styling -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Your CSS file -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <span class="badge-tag">API + Popmotion Project</span>
+    <h1>Apple Music Style Search</h1>
+    <p>
+      Search for songs or artists using Apple's iTunes Search API and display. On the right, a Popmotion tween animation demonstrates smooth motion.
+    </p>
+  </header>
 
-  <div class="box">
-    <h1>My Project is Working!</h1>
-    <p>This is a simple test page for GitHub Pages.</p>
-  </div>
+  <main>
+    <!-- LEFT: Apple-style music search (API) -->
+    <section class="card-custom">
+      <div class="card-header-text">
+        <h2 class="mb-1">Search Music</h2>
+        <p class="mb-2">
+          Type a song title or artist name. This uses
+          <strong>Apple's iTunes Search API</strong> (<code>media=music</code>) to load results.
+        </p>
+      </div>
 
+      <div class="input-group mb-3">
+        <input
+          id="search-input"
+          type="text"
+          class="form-control"
+          placeholder="e.g. Taylor Swift, Blinding Lights, Bad Bunny..."
+        />
+        <button id="search-btn" class="btn btn-success">
+          Search
+        </button>
+      </div>
+
+      <div>
+        <h5 class="mb-2">Results</h5>
+        <div id="results">
+          <p class="mb-0 text-secondary">
+            Start by entering a song or artist and clicking <strong>Search</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center gap-2 mt-1">
+        <a
+          href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline-light btn-sm"
+        >
+          View iTunes Search API Docs
+        </a>
+        <small class="text-secondary">Powered by Apple iTunes API</small>
+      </div>
+    </section>
+
+    <!-- RIGHT: Popmotion tween animation demo -->
+    <section class="card-custom">
+      <div>
+        <h2 class="mb-1">Popmotion Tween Animation</h2>
+        <p class="mb-3">
+          This circle uses <strong>Popmotion</strong>'s <code>tween</code> function to glide left and right
+          with an ease in out curve. Click the button or the circle to run the animation.
+        </p>
+      </div>
+
+      <div id="animation-wrapper">
+        <div id="animation-ball">▶</div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center gap-2 mt-1">
+        <button id="animate-btn" class="btn btn-primary">
+          Animate Circle
+        </button>
+        <a
+          href="https://popmotion.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline-light btn-sm"
+        >
+          Popmotion Docs
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer links for assignment -->
+  <footer>
+    <h3 class="mb-3">Project Links</h3>
+    <div class="link-list">
+      <!-- You can swap these hrefs for your class sign-up links -->
+      <a
+        href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="pill-link"
+      ></a>
+
+      <a
+        href="https://github.com/MarieroseSinan/api-popmotion-project"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="pill-link"
+      >
+        <span class="icon">💻</span>
+        GitHub Repository
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts: Popmotion, Bootstrap, then your JS -->
+  <script src="https://unpkg.com/popmotion@8.1.24/dist/popmotion.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
