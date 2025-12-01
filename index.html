@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apple Music Style Search + Popmotion</title>
+  <title>Bible Verse Finder + Popmotion Tween</title>
 
   <!-- Bootstrap for layout / styling -->
   <link
@@ -17,74 +17,78 @@
 <body>
   <header>
     <span class="badge-tag">API + Popmotion Project</span>
-    <h1>Apple Music Style Search</h1>
+    <h1>Bible Verse Finder</h1>
     <p>
-      Search for songs or artists using Apple's iTunes Search API and display. On the right, a Popmotion tween animation demonstrates smooth motion.
+      Search for a specific Bible verse (for example <strong>John 3:16</strong>) or get a random verse.
+      Each verse uses a Popmotion <code>tween</code> animation when it appears.
     </p>
   </header>
 
   <main>
-    <!-- LEFT: Apple-style music search (API) -->
+    <!-- LEFT: Bible Verse Finder (API) -->
     <section class="card-custom">
       <div class="card-header-text">
-        <h2 class="mb-1">Search Music</h2>
+        <h2 class="mb-1">Find a Verse</h2>
         <p class="mb-2">
-          Type a song title or artist name. This uses
-          <strong>Apple's iTunes Search API</strong> (<code>media=music</code>) to load results.
+          This uses the <strong>Bible API</strong> at <code>bible-api.com</code>. You can type a reference like
+          <em>John 3:16</em> or <em>Psalm 23:1-3</em>, or click <strong>Random Verse</strong>.
         </p>
       </div>
 
       <div class="input-group mb-3">
         <input
-          id="search-input"
+          id="reference-input"
           type="text"
           class="form-control"
-          placeholder="e.g. Taylor Swift, Blinding Lights, Bad Bunny..."
+          placeholder="e.g. John 3:16, Psalm 23:1-3..."
         />
         <button id="search-btn" class="btn btn-success">
           Search
         </button>
       </div>
 
-      <div>
-        <h5 class="mb-2">Results</h5>
-        <div id="results">
-          <p class="mb-0 text-secondary">
-            Start by entering a song or artist and clicking <strong>Search</strong>.
-          </p>
-        </div>
+      <button id="random-btn" class="btn btn-outline-light btn-sm mb-3">
+        Get Random Verse
+      </button>
+
+      <div id="verse-card">
+        <p class="text-secondary mb-1">Verse will appear here.</p>
+        <p id="verse-text" class="verse-text"></p>
+        <p id="verse-ref" class="verse-ref"></p>
+        <p id="verse-version" class="verse-version text-secondary small"></p>
       </div>
 
-      <div class="d-flex justify-content-between align-items-center gap-2 mt-1">
+      <div class="d-flex justify-content-between align-items-center gap-2 mt-2">
         <a
-          href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/"
+          href="https://bible-api.com/"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline-light btn-sm"
         >
-          View iTunes Search API Docs
+          View Bible API Docs
         </a>
-        <small class="text-secondary">Powered by Apple iTunes API</small>
+        <small class="text-secondary">Powered by Bible API</small>
       </div>
     </section>
 
-    <!-- RIGHT: Popmotion tween animation demo -->
+    <!-- 
     <section class="card-custom">
       <div>
         <h2 class="mb-1">Popmotion Tween Animation</h2>
         <p class="mb-3">
-          This circle uses <strong>Popmotion</strong>'s <code>tween</code> function to glide left and right
-          with an ease in out curve. Click the button or the circle to run the animation.
+          When a new verse is loaded, the verse card uses <strong>Popmotion</strong>’s
+          <code>tween</code> to smoothly fade and slide into place. You can also click this button
+          to re-run the animation.
         </p>
       </div>
 
       <div id="animation-wrapper">
-        <div id="animation-ball">▶</div>
+        <div id="animation-ball">✝</div>
       </div>
 
       <div class="d-flex justify-content-between align-items-center gap-2 mt-1">
         <button id="animate-btn" class="btn btn-primary">
-          Animate Circle
+          Animate Verse Card
         </button>
         <a
           href="https://popmotion.io/"
@@ -95,21 +99,25 @@
           Popmotion Docs
         </a>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- Footer links for assignment -->
   <footer>
     <h3 class="mb-3">Project Links</h3>
     <div class="link-list">
-      <!-- You can swap these hrefs for your class sign-up links -->
+      <!-- API / Animation sign up (you can adjust these links as needed) -->
       <a
-        href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/"
+        href="https://bible-api.com/"
         target="_blank"
         rel="noopener noreferrer"
         class="pill-link"
-      ></a>
+      >
+        <span class="icon">📖</span>
+        API: Bible API
+      </a>
 
+      
       <a
         href="https://github.com/MarieroseSinan/api-popmotion-project"
         target="_blank"
@@ -119,6 +127,13 @@
         <span class="icon">💻</span>
         GitHub Repository
       </a>
+    </div>
+
+    <div class="mt-4">
+      <h4 class="mb-1">Project Owner</h4>
+      <p class="mb-0"><strong>Name:</strong> Marierose Sinanian</p>
+      <p class="mb-0"><strong>API:</strong> Bible API (bible-api.com)</p>
+      <p class="mb-0"><strong>Animation:</strong> Popmotion Tween</p>
     </div>
   </footer>
 

@@ -1,6 +1,6 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
+  background: radial-gradient(circle at top, #172554, #020617);
   color: #e5e7eb;
   min-height: 100vh;
 }
@@ -12,18 +12,18 @@ header {
 }
 
 header h1 {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   margin-bottom: 0.25rem;
 }
 
 header p {
-  color: #9ca3af;
+  color: #cbd5f5;
   max-width: 650px;
   margin: 0.5rem auto 0;
 }
 
 .badge-tag {
-  background: #16a34a;
+  background: #22c55e;
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
@@ -31,7 +31,7 @@ header p {
   text-transform: uppercase;
 }
 
-/* MAIN GRID: left (API) / right (animation) */
+/* MAIN GRID: left (API) / right (animation/info) */
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -58,71 +58,40 @@ main {
 }
 
 /* Search input */
-#search-input {
+#reference-input {
   background: #030712;
   border: 1px solid #374151;
   color: #e5e7eb;
 }
-
-#search-input::placeholder {
+#reference-input::placeholder {
   color: #6b7280;
 }
 
-/* Results area */
-#results {
-  max-height: 360px;
-  overflow-y: auto;
+/* Verse card */
+#verse-card {
+  background: #030712;
   border-radius: 0.75rem;
-  background: #020617;
   border: 1px solid #111827;
-  padding: 0.5rem;
+  padding: 1rem;
+  min-height: 120px;
+  transition: box-shadow 0.2s ease;
 }
 
-.track-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.45rem 0.5rem;
-  border-radius: 0.5rem;
-  transition: background 0.15s ease, transform 0.1s ease;
-  cursor: pointer;
+#verse-card:hover {
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
 }
 
-.track-row:hover {
-  background: #111827;
-  transform: translateY(-1px);
+.verse-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.track-art {
-  width: 52px;
-  height: 52px;
-  border-radius: 0.5rem;
-  object-fit: cover;
-}
-
-.track-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.track-name {
-  font-size: 0.95rem;
+.verse-ref {
   font-weight: 600;
-  color: #f9fafb;
+  margin-bottom: 0.25rem;
 }
 
-.track-artist {
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-.track-album {
-  font-size: 0.75rem;
-  color: #6b7280;
-}
-
-/* Animation area */
+ Animation area 
 #animation-wrapper {
   display: flex;
   justify-content: center;
@@ -144,7 +113,7 @@ main {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #020617;
   cursor: pointer;
   transform: translateX(0);
